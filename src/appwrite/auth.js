@@ -51,7 +51,7 @@ export class AuthService{
     }
     async createOAuth2Session() {
         try {
-          await this.account.createOAuth2Session('google', 'http://localhost:5173/', 'http://localhost:5173/');
+          await this.account.createOAuth2Session('google', 'https://aspire-nex.vercel.app/', 'https://aspire-nex.vercel.app/');
         } catch (error) {
           console.log("Appwrite service :: createOAuth2Session ::error", error);
         }

@@ -77,7 +77,7 @@ function Header() {
 
             {
               authStatus && (
-                <li className='mr-4'>
+                <li className='mr-4  '>
                   <LogoutBtn/>
                 </li>
               )
