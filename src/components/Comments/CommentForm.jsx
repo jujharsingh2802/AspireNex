@@ -60,7 +60,7 @@ function CommentForm({ articleId, onCommentAdded ,status }) {
                 <div className="dark:text-white font-serif">
                     <button
                         onClick={handleAddAnsClick}
-                        className='bg-[#333333] border-white border-[2px] mt-2 ml-2 hover:bg-[#1c1c1c] hover:border-[3px] rounded-lg px-2 py-1.5'
+                        className='dark:bg-[#333333] border-white border-[2px] mt-2 ml-2 dark:hover:bg-[#1c1c1c] hover:border-[3px] rounded-lg hover:bg-gray-300 px-2 py-1.5'
                     >
                         {questionId ? "Add Answer":"Add Comment"}
                     </button>
@@ -72,7 +72,7 @@ function CommentForm({ articleId, onCommentAdded ,status }) {
                             value={content}
                             onChange={handleChange}
                             placeholder={questionId? "Add your Answer...." : "Add your comment..."}
-                            className="block w-full px-4 py-3 rounded-lg bg-gray-200 border-transparent resize-none focus:border-gray-500 focus:bg-white focus:ring-0"
+                            className="block w-full px-4 py-3 rounded-lg dark:bg-gray-200 border-transparent resize-none focus:border-gray-500 focus:bg-white focus:ring-0"
                             required
                         ></textarea>
                         <button

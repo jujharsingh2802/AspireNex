@@ -16,7 +16,7 @@ const CommentCard = ({ comment, onDelete }) => {
     };
 
     return (
-        <div className="comment bg-gray-100 p-2 rounded mb-2 ">
+        <div className="comment dark:bg-[#2F2F2F] dark:text-white bg-gray-100 p-2 rounded mb-2 ">
             <div><strong>{comment.userName}:</strong> {comment.content}</div>
             {isCommentOwner && (
                 <button className="text-red-500 hover:text-red-700 mt-1" onClick={handleDelete}>
