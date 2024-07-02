@@ -33,7 +33,8 @@ function MyPosts() {
             <Container>
                 <div className='flex flex-wrap'>
                     {posts.map((post) => (
-                        <div key={post.$id} className='p-2 w-full md:w-1/4'>
+
+                        <div key={post.$id} className={`p-2 w-full  ${post.status ==="blogPost"? "md:w-1/4" : null}`}>
                             <PostCard {...post} />
                         </div>
                     ))}
