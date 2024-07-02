@@ -6,7 +6,7 @@ function Loading( className="") {
         <div className="loading-image-container justify-center">
                   <img
               src="images/loading-image.gif"
-              alt="Loading  "
+              alt="Loading"
               className="loading-image"
             />
             

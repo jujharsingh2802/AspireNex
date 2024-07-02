@@ -60,16 +60,17 @@ export default function Post() {
     const handleCommentAdded = () => {
         fetchComments();
     };
-    
+    const quesClasses = status==="question" ?  "" :null;
+    const BlogClasses = status==="blogPost" ?  "border mb-4" :null;
     return post ? (
         <div className="py-8">
             <Container>
-                <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2 object-contain">
-                    <img
+                <div className={`w-full flex justify-center  relative ${quesClasses} ${BlogClasses} rounded-xl p-2 object-contain`}>
+                   {status==="blogPost" && <img
                         src={appwriteService.getFilePreview(post.featuredImage)}
                         alt={post.title}
                         className="rounded-xl max-h-[90vh]"
-                    />
+                    />}
 
                     {isAuthor && (
                         <div className="absolute right-6 top-6">
@@ -93,8 +94,8 @@ export default function Post() {
                         {parse(post.content)}
                     </div>
                 </div>
-                <CommentForm articleId={post.$id} onCommentAdded={handleCommentAdded} />
-                <CommentList comments={comments} setComments={setComments} />
+                <CommentForm articleId={post.$id} onCommentAdded={handleCommentAdded} status={status} />
+                <CommentList comments={comments} setComments={setComments} status={status} />
             </Container>
         </div>
     ) : null;
