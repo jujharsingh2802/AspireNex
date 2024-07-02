@@ -4,12 +4,13 @@ import { Button, Input, RTE, Select } from "..";
 import appwriteService from "../../appwrite/config";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { nanoid } from "nanoid";
 
 export default function PostForm({ post }) {
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
         defaultValues: {
             title: post?.title || "",
-            slug: post?.$id || "",
+            slug: post?.$id || "", 
             content: post?.content || "",
             status: post?.status || "blogPost",
         },
@@ -41,7 +42,9 @@ export default function PostForm({ post }) {
             if (file) {
                 data.featuredImage = file.$id;
             }
-            const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id });
+            const slug = data.title.length > 36 ? nanoid(10) : data.title.substring(0, 36).toLowerCase().replace(/[^a-zA-Z\d\s]+/g, "-").replace(/\s/g, "-");
+
+            const dbPost = await appwriteService.createPost({ ...data, slug, userId: userData.$id });
 
             if (dbPost) {
                 navigate(`/post/${dbPost.$id}`);

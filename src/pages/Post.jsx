@@ -86,8 +86,10 @@ export default function Post() {
                     )}
                 </div>
                 <div className="bg-white p-3 rounded-xl dark:bg-[#2c2929] dark:text-white">
-                    <div className="w-full mb-6">
-                        <h1 className="text-3xl font-bold">{post.title}</h1>
+                <div className="w-full mb-6">
+                        <h1 className="text-3xl font-bold max-w-5xl break-words">
+                            <p>{post.title}</p>
+                        </h1>
                         <div className="bg-yellow-400 mt-2 w-96 h-[3px] rounded-full"></div>
                     </div>
                     <div className="browser-css">

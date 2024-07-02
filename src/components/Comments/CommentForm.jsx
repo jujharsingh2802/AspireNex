@@ -62,7 +62,7 @@ function CommentForm({ articleId, onCommentAdded ,status }) {
                         onClick={handleAddAnsClick}
                         className='bg-[#333333] border-white border-[2px] mt-2 ml-2 hover:bg-[#1c1c1c] hover:border-[3px] rounded-lg px-2 py-1.5'
                     >
-                        Add Answer
+                        {questionId ? "Add Answer":"Add Comment"}
                     </button>
                 </div>
             ) : (
