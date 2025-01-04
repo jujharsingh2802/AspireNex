@@ -40,7 +40,7 @@ function Footer() {
                                 <li className="mb-4">
                                     <Link
                                         className=" text-base font-medium text-gray-900 dark:text-white hover:text-gray-700"
-                                        to="/"
+                                        to="/pricing"
                                     >
                                         Pricing
                                     </Link>
@@ -48,7 +48,7 @@ function Footer() {
                                 <li className="mb-4">
                                     <Link
                                         className=" text-base font-medium text-gray-900 dark:text-white hover:text-gray-700"
-                                        to="/"
+                                        to="/affiliate-program"
                                     >
                                         Affiliate Program
                                     </Link>

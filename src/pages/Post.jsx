@@ -60,12 +60,11 @@ export default function Post() {
     const handleCommentAdded = () => {
         fetchComments();
     };
-    const quesClasses = status==="question" ?  "" :null;
-    const BlogClasses = status==="blogPost" ?  "border mb-4" :null;
+    const BlogClasses = status==="blogPost" ?  "border-slate-700 border-[2px] dark:border-white dark:border-[1px] mb-4" :null;
     return post ? (
         <div className="py-8">
             <Container>
-                <div className={`w-full flex justify-center  relative ${quesClasses} ${BlogClasses} rounded-xl p-2 object-contain`}>
+                <div className={`w-full flex justify-center relative ${BlogClasses} rounded-xl p-2 object-contain`}>
                    {status==="blogPost" && <img
                         src={appwriteService.getFilePreview(post.featuredImage)}
                         alt={post.title}

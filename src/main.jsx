@@ -16,6 +16,8 @@ import Post from "./pages/Post";
 import Blogs from "./pages/Blogs"
 import conf from './conf/conf.js'
 import AllQuestions from './pages/AllQuestions.jsx'
+import Pricing from './pages/AdditionalPages/Pricing.jsx'
+import AffiliateProgram from './pages/AdditionalPages/Affiliate.jsx'
 
 const router = createBrowserRouter([
   {
@@ -92,6 +94,14 @@ const router = createBrowserRouter([
             path: "/post/:slug",
             element: <Post />,
         },
+        {
+            path: "/pricing",
+            element: <Pricing />,
+        },
+        {
+            path: "/affiliate-program",
+            element: <AffiliateProgram />,
+        }
     ],
 },
 ])
