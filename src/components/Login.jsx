@@ -6,7 +6,7 @@ import {useDispatch} from "react-redux"
 import authService from "../appwrite/auth"
 import {useForm} from "react-hook-form"
 
-function Login() {
+function Login({flag = false}) {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const {register, handleSubmit} = useForm()
@@ -19,7 +19,8 @@ function Login() {
             if (session) {
                 const userData = await authService.getCurrentUser()
                 if(userData) dispatch(authLogin(userData));
-                navigate("/")
+                if(flag === true) navigate("/blogs")
+                else navigate("/")
             }
         } catch (error) {
             setError(error.message)

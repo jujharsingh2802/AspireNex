@@ -20,7 +20,7 @@ function Home() {
                 <Container>
                     <div className="flex flex-wrap">
                         <div className="p-2 w-full">
-                         <Login/>
+                         <Login flag={true}/>
                          </div>
                     </div>
                 </Container>
