@@ -136,6 +136,10 @@ export class Service{
             fileId,//fileId
         )
     }
+    getFileDownload(fileId) {
+        return this.bucket.getFileDownload(conf.appwriteBucketId, fileId);
+    }
+
     fileDownload(fileId){
         return this.bucket.getFileDownload(
             conf.appwriteBucketId,

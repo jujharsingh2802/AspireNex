@@ -66,7 +66,7 @@ export default function Post() {
             <Container>
                 <div className={`w-full flex justify-center relative ${BlogClasses} rounded-xl p-2 object-contain`}>
                    {status==="blogPost" && <img
-                        src={appwriteService.getFilePreview(post.featuredImage)}
+                        src={appwriteService.getFileDownload(post.featuredImage).href} 
                         alt={post.title}
                         className="rounded-xl max-h-[90vh]"
                     />}
